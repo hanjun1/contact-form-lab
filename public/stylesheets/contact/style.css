@@ -1,3 +1,7 @@
+html {
+  font-family: "Roboto", sans-serif;
+}
+
 body {
   height: 100%;
   display: flex;
@@ -5,9 +9,64 @@ body {
   justify-content: center;
 }
 
+h1 {
+  font-weight: bold;
+  font-size: 34px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+span {
+  font-weight: bold;
+  color: red;
+}
+
+form {
+  margin: 5px;
+  padding: 30px;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 5px;
+  font-size: 18px;
+  padding: 3px;
+}
+
+button {
+  padding: 10px;
+  color: white;
+  background: rgb(110, 110, 110);
+  border: 0px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
 .header {
   background: rgb(207, 207, 207);
+  padding: 30px;
+}
+
+.example {
+  font-size: 14px;
 }
 
 .form-container {
+  margin-top: 10%;
+  width: 500px;
+  border: 1px solid black;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }

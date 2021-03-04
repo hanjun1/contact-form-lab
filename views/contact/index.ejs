@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/contact/reset.css" />
     <link rel="stylesheet" href="/stylesheets/contact/style.css" />
     <title>Contact Us</title>
   </head>
@@ -14,15 +20,22 @@
         <p>Please fill this form in a decent manner</p>
       </div>
       <form action="/contactus" method="POST">
-        <label for="name">Name <span>*</span></label> <br />
-        <input type="text" name="name" /> <br />
-        <label for="email">E-mail <span>*</span></label> <br />
-        <input type="email" name="email" /> <br />
-        <!-- <p>example@example.com</p> -->
-        <label for="message">Message <span>*</span></label> <br />
-        <textarea name="message" id="message" cols="30" rows="10"></textarea>
-        <br />
-        <button type="submit">SUBMIT</button>
+        <div class="input-container">
+          <label for="name">Name <span>*</span></label> <br />
+          <input type="text" name="name" /> <br />
+        </div>
+        <div class="input-container">
+          <label for="email">E-mail <span>*</span></label> <br />
+          <input type="email" name="email" /> <br />
+          <p class="example">example@example.com</p>
+        </div>
+        <div class="input-container">
+          <label for="message">Message <span>*</span></label> <br />
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <div class="button-container">
+          <button type="submit">SUBMIT</button>
+        </div>
       </form>
     </div>
   </body>
