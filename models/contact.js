@@ -1,21 +1,38 @@
-module.exports = {
-  getSubmittedForms,
-  addSubmission,
-};
+const mongoose = require("mongoose");
 
-let submittedForms = [];
+const Schema = mongoose.Schema;
 
-function getSubmittedForms() {
-  return submittedForms;
-}
+const submissionsSchema = new Schema(
+  {
+    name: String,
+    email: String,
+    message: String,
+  },
+  {
+    timestamps: true,
+  }
+);
 
-function addSubmission(name, email, message) {
-  let id = submittedForms.length + 1;
-  let submission = {
-    id,
-    name,
-    email,
-    message,
-  };
-  submittedForms.push(submission);
-}
+module.exports = mongoose.model("Submissions", submissionsSchema);
+
+// module.exports = {
+//   getSubmittedForms,
+//   addSubmission,
+// };
+
+// let submittedForms = [];
+
+// function getSubmittedForms() {
+//   return submittedForms;
+// }
+
+// function addSubmission(name, email, message) {
+//   let id = submittedForms.length + 1;
+//   let submission = {
+//     id,
+//     name,
+//     email,
+//     message,
+//   };
+//   submittedForms.push(submission);
+// }

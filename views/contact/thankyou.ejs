@@ -9,8 +9,9 @@
   <body>
     <h1>Thanks for your email!</h1>
     <p>Review what was submitted:</p>
-    <p>Name: <%= response[response.length-1].name %></p>
-    <p>E-mail: <%= response[response.length-1].email %></p>
-    <p>Message: <%= response[response.length-1].message %></p>
+    <p>Name: <%= submission.name %></p>
+    <p>E-mail: <%= submission.email %></p>
+    <p>Message: <%= submission.message %></p>
+    <a href="/contactus">Submit Another Form</a>
   </body>
 </html>

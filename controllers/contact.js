@@ -2,21 +2,31 @@ module.exports = {
   index,
   submitMessage,
   thankYouMessage,
+  show,
 };
 
-const SubmittedForms = require("../models/contact");
+const Submissions = require("../models/contact");
 
 function index(req, res) {
   res.render("contact/index");
 }
 
 function submitMessage(req, res) {
-  SubmittedForms.addSubmission(req.body.name, req.body.email, req.body.message);
-  res.redirect("/contactus/thankyou");
+  const submission = new Submissions(req.body);
+  submission.save(function (err) {
+    if (err) return res.render("contact/index");
+    res.redirect(`/contactus/${submission.id}/thankyou`);
+  });
 }
 
 function thankYouMessage(req, res) {
-  res.render("contact/thankyou", {
-    response: SubmittedForms.getSubmittedForms(),
+  Submissions.findById(req.params.id, function (err, submission) {
+    res.render("contact/thankyou", { submission });
+  });
+}
+
+function show(req, res) {
+  Submissions.find({}, function (err, submissions) {
+    res.render("contact/show", { submissions });
   });
 }
